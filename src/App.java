@@ -21,10 +21,11 @@ public class App {
         nerdExam.addQuestion(question2);
 
         Question[] nerdQuestions = nerdExam.getQuestions();
-        System.out.println("Questão 1");
-        System.out.println(nerdQuestions[0].questionStatement);
-        System.out.println("Questão 2");
-        System.out.println(nerdQuestions[1].questionStatement);
+        for (int i = 0; i < nerdQuestions.length; i++) {
+            System.out.println("Questão " + (i + 1));
+            System.out.println(nerdQuestions[i].questionStatement);
+            System.out.println(nerdQuestions[i].getResolution());
+        }
 
         nerdExam.removeQuestion(1);
         System.out.println("Questão 2 removida");
