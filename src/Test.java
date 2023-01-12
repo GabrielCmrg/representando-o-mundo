@@ -7,6 +7,9 @@ public class Test {
     public Test(int questionNumber, String subject) {
         this.questionNumber = questionNumber;
         this.questions = new Question[questionNumber];
+        for (int i = 0; i < questionNumber; i++) {
+            this.questions[i] = new Question();
+        }
         this.subject = subject;
     }
 
@@ -23,7 +26,7 @@ public class Test {
             System.out.println("Não é possível colocar questões de outra disciplina na prova.");
         } else {
             for (Question current : this.questions) {
-                if (current.questionStatement.equals("")) {
+                if (current.questionStatement == null) {
                     current.questionStatement = question.questionStatement;
                     current.subject = question.subject;
                     return;
